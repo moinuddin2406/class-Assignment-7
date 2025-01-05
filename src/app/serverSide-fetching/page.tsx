@@ -5,7 +5,7 @@ interface Books{
     type : string
     available :boolean
   }
-const code = async() => {
+const Code = async() => {
     const res = await fetch("https://simple-books-api.glitch.me/books/")
     const parsedResponse :Books[] =await res.json()
     console.log("books ===>" ,parsedResponse)
@@ -26,6 +26,6 @@ const code = async() => {
   )
 }
 
-export default code
+export default Code
 
 

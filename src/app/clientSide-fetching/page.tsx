@@ -1,5 +1,6 @@
 "use client";
 import React ,{useEffect, useState} from "react";
+import Image from "next/image";
 
 interface Client{
     id:number;
@@ -14,7 +15,7 @@ interface Client{
     }
 
 }
-const page = () => {
+const Page = () => {
     const[data ,setData] = useState<Client[]>([]);
     useEffect(()=>{
         const fetchData = async () => {
@@ -34,7 +35,7 @@ const page = () => {
          {data.map((client, index) => (
         <div key={index} className="border-blue-500 border rounded-md bg- hover:bg-purple-200 text-center p-5">
            <p className="text-red-500 font-semibold text-[20px] m-2">{client.category}</p>
-          <img src={client.image} alt={client.title} className="w-full h-40 object-contain mb-3 " />
+          <Image src={client.image} alt={client.title} width={300} height={30} className="w-full h-40 object-contain mb-3 " />
            {/* <p>id: {client.id}</p> */}
           <p className="font-bold text-base text-center m-2">{client.title}</p>
           <p className="text-blue-800">{client.description}</p>
@@ -51,4 +52,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
